@@ -18,11 +18,17 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="text_username" class="form-label">Username</label>
-                                    <input type="text" class="form-control bg-dark text-info" name="text_username" >
+                                    <input type="text" class="form-control bg-dark text-info" name="text_username" value="{{ old('text_username') }}">
+                                    @error('text_username')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <label for="text_password" class="form-label">Password</label>
-                                    <input type="password" class="form-control bg-dark text-info" name="text_password" >
+                                    <input type="password" class="form-control bg-dark text-info" name="text_password" value="{{ old('text_password') }}">
+                                    @error('text_password')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
                                     <button type="submit" class="btn btn-secondary w-100">LOGIN</button>
@@ -36,17 +42,8 @@
                         <small>&copy; <?= date('Y') ?> Notes</small>
                     </div>
 
-                    <!--  -->
-                    @if($errors->any())
-                        <div class="alert alert-danger mt-3">
-                            <ul class="ul m-0">
-                                @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-
-                            </ul>
-                        </div>
-                    @endif
+                    
+                   
                 </div>
             </div>
         </div>
