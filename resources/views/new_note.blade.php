@@ -28,7 +28,7 @@
                             <label class="form-label">Note Title</label>
                             <input type="text" class="form-control bg-primary text-white" name="text_title" value="{{old('text_title')}}">
                             @error('text_title')
-                            <div class="text-danger">{{ $message }}</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">
